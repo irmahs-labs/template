@@ -6,7 +6,7 @@ const port = Number(process.env.PORT ?? 3000);
 
 createServer((req, res) => {
   const { body, status } = reply(
-    new URL(req.url ?? "/", "http://app").pathname
+    new URL(req.url ?? "/", "https://app").pathname
   );
 
   res.writeHead(status, { "content-type": "text/plain; charset=utf-8" });
