@@ -38,7 +38,7 @@ Irma's notes on every irmahs.dev app are in her Obsidian notes, the repo irmahs/
 
 ## Footer and privacy
 
-Every irmahs.dev app's footer links the legal pages (legal notice, privacy, terms of use, cookies), which live on irmahs.dev: copy `src/components/site-links.tsx` from an existing app (irmahs-labs/minigames) and put it in the footer. The privacy policy there (`src/lib/legal.ts`) describes exactly what each app collects, sends and keeps in the browser: a new app, or a change that adds a cookie, a localStorage key, a database column about people, or a request to another service, updates it in the same change. Collect only what the app needs, and nothing that needs a consent banner (no analytics, ads or tracking cookies; CNIL guidelines 2020-091).
+Every irmahs.dev app's footer links the legal pages (legal notice, privacy, terms of use, cookies), which live on irmahs.dev: copy `src/components/site-links.tsx` from an existing app (irmahs-labs/minigames) and put it in the footer. The privacy policy there (`src/lib/legal.ts`) describes what the apps collect by kind, not app by app, with every cookie and outside service named: a new app or a change that brings a new kind of personal data, a new cookie, or a new outside service updates it in the same change; one that keeps the same kinds of data does not. Collect only what the app needs, and nothing that needs a consent banner (no analytics, ads or tracking cookies; CNIL guidelines 2020-091).
 
 ## Checks before pushing
 
