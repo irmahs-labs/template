@@ -36,6 +36,10 @@ Irma's notes on every irmahs.dev app are in her Obsidian notes, the repo irmahs/
   - `Context Graph.md`, if it changes a subdomain, a redirect, a link between apps, who asks whom (sign-in, admin checks, internal calls), or where data lives. Update both the graph and the table.
 - The notes go in through their own pull request, like any other change: a branch from the notes repo's `origin/main`, never their `main`. The local checkout is often left on an old branch, so work in a `git worktree` of `origin/main` rather than touching it. Link the app's PR in the notes PR.
 
+## Footer and privacy
+
+Every irmahs.dev app's footer links the legal pages (legal notice, privacy, terms of use, cookies), which live on irmahs.dev: copy `src/components/site-links.tsx` from an existing app (irmahs-labs/minigames) and put it in the footer. The privacy policy there (`src/lib/legal.ts`) describes exactly what each app collects, sends and keeps in the browser: a new app, or a change that adds a cookie, a localStorage key, a database column about people, or a request to another service, updates it in the same change. Collect only what the app needs, and nothing that needs a consent banner (no analytics, ads or tracking cookies; CNIL guidelines 2020-091).
+
 ## Checks before pushing
 
 ```sh
